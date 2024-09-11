@@ -12,7 +12,7 @@ import Header from './Header'
 const TextToImage = ({ onNavigate }: { onNavigate: (page: string) => void }) => {
   const [inputText, setInputText] = useState('')
   const [generatedImage, setGeneratedImage] = useState('')
-  const [selectedOption, setSelectedOption] = useState('home')
+  
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
 

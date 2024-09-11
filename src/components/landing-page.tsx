@@ -59,17 +59,7 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: LucideIcon; tit
   )
 }
 
-const AnimatedButton = ({ children, onClick, className }: { children: React.ReactNode; onClick: () => void; className?: string }) => (
-  <motion.button
-    whileHover={{ scale: 1.05, rotateY: 5, rotateX: -5 }}
-    whileTap={{ scale: 0.95 }}
-    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-    onClick={onClick}
-    className={className}
-  >
-    {children}
-  </motion.button>
-)
+
 
 const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
   const [currentPage, setCurrentPage] = useState('landing')
