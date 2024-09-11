@@ -1,0 +1,65 @@
+'use client'
+
+import { motion, AnimatePresence } from 'framer-motion'
+import TextToImage from "@/components/text-to-image-app"
+import LandingPage from "@/components/landing-page"
+import ImageHistory from "@/components/ImageHistory"
+import ContactUs from "@/components/ContactUs"
+import VisionaryTraining from "@/components/VisionaryTraining" // Add this line
+import { useState } from 'react'
+
+// Mock data for images (replace with actual data fetching logic)
+const mockImages = [
+  { id: '1', url: 'https://example.com/image1.jpg', prompt: 'A beautiful sunset' },
+  { id: '2', url: 'https://example.com/image2.jpg', prompt: 'A futuristic city' },
+  // Add more mock images as needed
+]
+
+export default function Home() {
+  const [currentPage, setCurrentPage] = useState('landing')
+
+  const handleNavigation = (page: string) => {
+    setCurrentPage(page)
+  }
+
+  const pageVariants = {
+    initial: { opacity: 0, x: "-100%" },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: "100%" }
+  }
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.5
+  }
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentPage}
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+        {currentPage === 'landing' && (
+          <LandingPage onNavigate={handleNavigation} />
+        )}
+        {currentPage === 'home' && (
+          <TextToImage onNavigate={handleNavigation} />
+        )}
+        {currentPage === 'history' && (
+          <ImageHistory onNavigate={handleNavigation} />
+        )}
+        {currentPage === 'training' && ( // Add this block
+          <VisionaryTraining onNavigate={handleNavigation} />
+        )}
+        {currentPage === 'contact' && (
+          <ContactUs onNavigate={handleNavigation} />
+        )}
+      </motion.div>
+    </AnimatePresence>
+  )
+}
