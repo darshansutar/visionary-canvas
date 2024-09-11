@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { Paintbrush, Wand2, Sparkles, Home, Phone, Image as ImageIcon, LucideIcon } from 'lucide-react'
+import { Paintbrush, Wand2, Sparkles, LucideIcon } from 'lucide-react'
 import Header from './Header'
 
 const features = [

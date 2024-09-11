@@ -8,12 +8,7 @@ import ContactUs from "@/components/ContactUs"
 import VisionaryTraining from "@/components/VisionaryTraining" // Add this line
 import { useState } from 'react'
 
-// Mock data for images (replace with actual data fetching logic)
-const mockImages = [
-  { id: '1', url: 'https://example.com/image1.jpg', prompt: 'A beautiful sunset' },
-  { id: '2', url: 'https://example.com/image2.jpg', prompt: 'A futuristic city' },
-  // Add more mock images as needed
-]
+
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('landing')

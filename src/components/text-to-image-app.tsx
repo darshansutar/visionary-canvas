@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Home, Phone, Image as ImageIcon, Loader2, Download } from "lucide-react"
+import {  Loader2, Download } from "lucide-react"
 import { generateImage } from '@/app/actions/generateImage'
 import { v4 as uuidv4 } from 'uuid'
 import Header from './Header'
@@ -16,21 +16,7 @@ const TextToImage = ({ onNavigate }: { onNavigate: (page: string) => void }) => 
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
 
-  const backgroundVariants = {
-    animate: {
-      background: [
-        "linear-gradient(to bottom right, #e6f2ff, #b3d9ff, #80bfff)",
-        "linear-gradient(to bottom right, #b3d9ff, #80bfff, #4da6ff)",
-        "linear-gradient(to bottom right, #80bfff, #4da6ff, #1a8cff)",
-        "linear-gradient(to bottom right, #e6f2ff, #b3d9ff, #80bfff)",
-      ],
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        repeatType: "reverse"
-      }
-    }
-  }
+ 
 
   const cardVariants = {
     initial: { opacity: 0, y: 20 },
