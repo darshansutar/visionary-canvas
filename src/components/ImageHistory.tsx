@@ -70,15 +70,15 @@ const ImageHistory = ({ onNavigate }: { onNavigate: (page: string) => void }) =>
     <motion.div
       className="min-h-screen flex flex-col"
       style={{
-        background: "linear-gradient(to bottom right, #e6f2ff, #b3d9ff, #80bfff)",
+        background: "linear-gradient(to bottom right, #e6fff9, #b3ffe6, #80ffd4)",
         transition: "background 20s ease-in-out"
       }}
       animate={{
         background: [
-          "linear-gradient(to bottom right, #e6f2ff, #b3d9ff, #80bfff)",
-          "linear-gradient(to bottom right, #b3d9ff, #80bfff, #4da6ff)",
-          "linear-gradient(to bottom right, #80bfff, #4da6ff, #1a8cff)",
-          "linear-gradient(to bottom right, #e6f2ff, #b3d9ff, #80bfff)",
+          "linear-gradient(to bottom right, #e6fff9, #b3ffe6, #80ffd4)",
+          "linear-gradient(to bottom right, #b3ffe6, #80ffd4, #4dffc3)",
+          "linear-gradient(to bottom right, #80ffd4, #4dffc3, #1affb2)",
+          "linear-gradient(to bottom right, #e6fff9, #b3ffe6, #80ffd4)",
         ],
         transition: {
           duration: 20,

@@ -135,7 +135,7 @@ const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
       </main>
 
       <footer className="py-4 sm:py-6 text-center text-blue-600 text-sm sm:text-base">
-        <p>&copy; 2023 Visionary Canvas. All rights reserved.</p>
+        <p>&copy; 2024 Visionary Canvas. All rights reserved.</p>
       </footer>
     </motion.div>
   )

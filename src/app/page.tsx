@@ -37,6 +37,9 @@ export default function Home() {
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
+        style={{
+          background: "linear-gradient(to bottom right, #e6fff9, #b3ffe6, #80ffd4)",
+        }}
       >
         {currentPage === 'landing' && (
           <LandingPage onNavigate={handleNavigation} />

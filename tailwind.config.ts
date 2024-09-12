@@ -56,6 +56,21 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
+  	},
+  	colors: {
+    	teal: {
+      		50: '#e6fff9',
+      		100: '#b3ffe6',
+      		300: '#4dffc3',
+      		500: '#1affb2',
+      		600: '#00e699',
+      		800: '#00995e',
+    	},
+    	orange: {
+      		400: '#ffa64d',
+      		500: '#ff9933',
+      		600: '#ff8000',
+    	},
   	}
   },
   plugins: [require("tailwindcss-animate")],

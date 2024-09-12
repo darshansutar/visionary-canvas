@@ -38,7 +38,7 @@ const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: 
 
   return (
     <motion.header 
-      className="sticky top-0 bg-white bg-opacity-20 backdrop-blur-lg border-b border-white border-opacity-20 shadow-sm z-10"
+      className="sticky top-0 bg-teal-50 bg-opacity-20 backdrop-blur-lg border-b border-teal-100 border-opacity-20 shadow-sm z-10"
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -72,8 +72,8 @@ const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: 
                   variant="ghost"
                   className={`flex items-center space-x-2 ${
                     currentPage === item.id
-                      ? 'bg-blue-500 bg-opacity-30 text-blue-800'
-                      : 'hover:bg-blue-300 hover:bg-opacity-20 text-blue-600'
+                      ? 'bg-teal-500 bg-opacity-30 text-teal-800'
+                      : 'hover:bg-teal-300 hover:bg-opacity-20 text-teal-600'
                   }`}
                   onClick={() => onNavigate(item.id)}
                 >
