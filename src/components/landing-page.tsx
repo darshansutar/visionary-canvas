@@ -48,18 +48,16 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: LucideIcon; tit
       whileTap={{ cursor: 'grabbing' }}
       variants={cardVariants}
       whileHover="hover"
-      className="w-full sm:w-64 h-80 rounded-xl bg-white bg-opacity-20 backdrop-blur-lg p-6 cursor-grab transition-all duration-300"
+      className="w-full max-w-sm h-80 rounded-xl bg-white bg-opacity-20 backdrop-blur-lg p-6 cursor-grab transition-all duration-300"
     >
-      <div className="flex flex-col items-center text-center h-full">
-        <Icon className="w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-4 text-blue-500" />
-        <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-blue-800">{title}</h3>
-        <p className="text-sm sm:text-base text-blue-600">{description}</p>
+      <div className="flex flex-col items-center justify-center text-center h-full">
+        <Icon className="w-12 h-12 mb-4 text-blue-500" />
+        <h3 className="text-xl font-bold mb-2 text-blue-800">{title}</h3>
+        <p className="text-base text-blue-600">{description}</p>
       </div>
     </motion.div>
   )
 }
-
-
 
 const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
   const [currentPage, setCurrentPage] = useState('landing')
@@ -92,12 +90,12 @@ const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
     >
       <Header currentPage={currentPage} onNavigate={handleNavigation} />
       
-      <main className="flex-grow container mx-auto px-4 py-8 sm:py-12">
+      <main className="flex-grow container mx-auto px-4 py-8 sm:py-12 flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 sm:mb-16"
+          className="text-center mb-12"
         >
           <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-4"
@@ -106,7 +104,7 @@ const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
             Transform Text into Art
           </motion.h2>
           <motion.p 
-            className="text-lg sm:text-xl text-blue-700 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-blue-700 max-w-2xl mx-auto mb-8"
             whileHover={{ scale: 1.02 }}
           >
             Unleash your creativity with Visionary Canvas. Turn your words into stunning images using the power of AI.
@@ -117,7 +115,7 @@ const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
           >
             <Button 
               onClick={() => onNavigate('home')} 
-              className="mt-8 bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold"
             >
               Get Started
             </Button>
@@ -125,10 +123,10 @@ const LandingPage = ({ onNavigate }: { onNavigate: (id: string) => void }) => {
         </motion.div>
 
         <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 sm:gap-8"
         >
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />

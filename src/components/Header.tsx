@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Home, Phone, Image as ImageIcon, Menu, X, Sparkles } from "lucide-react"
+import Image from 'next/image'
 
 const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: (page: string) => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,9 +11,30 @@ const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: 
     { id: 'landing', icon: Home, label: 'Home' },
     { id: 'home', icon: ImageIcon, label: 'Generate' },
     { id: 'history', icon: ImageIcon, label: 'History' },
-    { id: 'training', icon: Sparkles, label: 'Training' }, // Add this line
+    { id: 'training', icon: Sparkles, label: 'Training' },
     { id: 'contact', icon: Phone, label: 'Contact' },
   ]
+
+  const logoVariants = {
+    hidden: { opacity: 0, rotate: -180, scale: 0.5 },
+    visible: { 
+      opacity: 1, 
+      rotate: 0, 
+      scale: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        duration: 0.5 
+      }
+    },
+    hover: { 
+      scale: 1.1,
+      rotate: 5,
+      transition: { duration: 0.3 }
+    },
+    tap: { scale: 0.95 }
+  }
 
   return (
     <motion.header 
@@ -20,7 +42,24 @@ const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: 
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-800">Visionary Canvas</h1>
+          <div className="flex items-center space-x-4">
+            <motion.div
+              className="relative w-16 h-16 sm:w-20 sm:h-20"
+              variants={logoVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Image
+                src="/images/cdl.gif"
+                alt="Visionary Canvas Logo"
+                layout="fill"
+                objectFit="contain"
+              />
+            </motion.div>
+            <h1 className="text-xl sm:text-2xl font-bold text-blue-800">Visionary Canvas</h1>
+          </div>
           <div className="sm:hidden">
             <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X /> : <Menu />}

@@ -108,7 +108,7 @@ const ImageHistory = ({ onNavigate }: { onNavigate: (page: string) => void }) =>
             >
               <ImageIcon className="w-16 h-16 text-blue-400 mb-4" />
               <p className="text-lg text-blue-600 font-semibold text-center">No images in history yet</p>
-              <p className="text-sm text-blue-500 mt-2 text-center">Generate some images to see them here!</p>
+              <p className="text-sm text-blue-500 mt-2 text-center">Generate your vision to see them here!</p>
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
