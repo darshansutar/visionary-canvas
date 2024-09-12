@@ -24,8 +24,7 @@ export default function Home() {
   }
 
   const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
+    ease: "easeInOut",
     duration: 0.5
   }
 

@@ -42,7 +42,7 @@ const Header = ({ currentPage, onNavigate }: { currentPage: string, onNavigate: 
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4"> {/* Changed from space-x-4 to space-x-2 */}
             <motion.div
               className="relative w-16 h-16 sm:w-20 sm:h-20"
               variants={logoVariants}
